@@ -1,0 +1,17 @@
+syntax="proto3";
+package pi;
+option go_package = "github.com/ronitboddu/pi/pb";
+
+service Process {
+    rpc GetDetails(Textfile) returns (Details) {}
+}
+
+message Textfile {
+    string fileName = 1;
+    string data = 2;
+}
+
+message Details {
+    int32 totalCount = 1;
+    map<string,int32> count = 2;
+}
